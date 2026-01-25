@@ -1,0 +1,273 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+import Button from '~/components/ui/Button.astro';
+import Image from '~/components/common/Image.astro';
+
+const appStoreImg = '~/assets/images/app-store.png';
+const appStoreDownloadLink = '';
+
+const googlePlayImg = '~/assets/images/google-play.png';
+const googlePlayDownloadLink = '#download';
+
+const metadata = {
+  title: 'My OPIC Story | 사진 한 장으로 맞춤 오픽 스크립트',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+   
+    image={{
+      src: '~/assets/images/default.png',
+      alt: 'My OPIC Story 앱 이미지',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight">My OPIC Story</span>: <br />
+      사진으로 시작하는 <span class="hidden xl:inline">나만의 오픽 스크립트</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        사진과 간단한 설명만 넣으면 AI가 개인화된 오픽 스크립트를 만들어줘요.
+      </span>
+      이제 답변 준비는 빠르고 자연스럽게.
+    </Fragment>
+
+    <div slot="actions" class="flex max-w-sm gap-4">
+      <Button variant="link" href={appStoreDownloadLink}>
+        <Image src={appStoreImg} alt="App Store Image" width={200} />
+      </Button>
+
+      <Button variant="link" href={googlePlayDownloadLink}>
+        <Image src={googlePlayImg} alt="Google Play Image" width={200} />
+      </Button>
+    </div>
+  </Hero2>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    id="guide"
+    title="My OPIC Story 사용 방법"
+    subtitle="사진과 간단한 설명을 입력하면 AI가 상황에 맞춘 오픽 스크립트를 즉시 생성합니다. 내 경험이 담긴 답변으로 연습 시간을 줄여보세요."
+    tagline="사용 흐름"
+    columns={2}
+    items={[
+      {
+        title: '앱 설치 후 시작하기',
+        description: `스토어에서 앱을 설치하고 간단한 튜토리얼로 흐름을 익혀요.`,
+        icon: 'tabler:square-number-1',
+      },
+      {
+        title: '사진과 설명 입력',
+        description:
+          '사진 한 장과 짧은 설명만 입력하면 충분해요.',
+        icon: 'tabler:square-number-2',
+      },
+      {
+        title: '맞춤 스크립트 생성',
+        description: 'AI가 상황에 맞는 오픽 스크립트를 바로 만들어줍니다.',
+        icon: 'tabler:square-number-3',
+      },
+      {
+        title: '연습하고 저장하기',
+        description: `생성된 스크립트를 연습하고, 내 답변을 저장해 복습하세요.`,
+        icon: 'tabler:square-number-4',
+      },
+    ]}
+    
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="features"
+    isReversed
+    items={[
+      {
+        title: '직관적인 입력 흐름',
+        description:
+          '사진과 설명만 입력하면 끝나는 간단한 플로우로 부담을 줄였습니다.',
+        icon: 'tabler:wand',
+      },
+      {
+        title: '개인화 스크립트',
+        description:
+          '내 경험을 반영한 맞춤형 답변을 만들어 자연스러운 스피킹을 돕습니다.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: '표현 추천',
+        description:
+          '자주 쓰는 표현과 핵심 키워드를 추천해 답변을 더 풍부하게 만들어요.',
+        icon: 'tabler:template',
+      },
+      {
+        title: '빠른 생성 속도',
+        description: '몇 초 만에 완성되는 스크립트로 준비 시간을 단축합니다.',
+        icon: 'tabler:carousel-horizontal',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/feature.png',
+      alt: 'My OPIC Story 기능 이미지',
+      ratio: '1/1'
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">핵심 기능</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Offline Access',
+        description: 'Offer the option for users to download purchased templates for offline use.',
+        icon: 'tabler:wifi-off',
+      },
+      {
+        title: 'Secure Cloud Storage',
+        description:
+          'Provide cloud storage for purchased templates, ensuring users can access and back up their templates from anywhere securely.',
+        icon: 'tabler:file-download',
+      },
+      {
+        title: 'Regular Updates',
+        description: 'Continuously add new templates and features to keep the app fresh and engaging for users.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Wishlist',
+        description: `Allow users to create a wishlist of templates they're interested in, making it easier for them to revisit and potentially purchase later.`,
+        icon: 'tabler:heart',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1453738773917-9c3eff1db985?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Vintage Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Other features</h3>
+    </Fragment>
+  </Content> -->
+
+  <!-- Stats Widget ****************** -->
+
+  <!-- <Stats
+    title="Statistics of our app"
+    stats={[
+      { amount: '20K', icon: 'tabler:download' },
+      { amount: '18.5K', icon: 'tabler:users' },
+      { amount: '4.7', icon: 'tabler:user-star' },
+    ]}
+  /> -->
+
+  <!-- Testimonials Widget *********** -->
+
+  <!-- <Testimonials
+    title="What our users say?"
+    testimonials={[
+      {
+        testimonial: `It's made exploring and downloading website templates a breeze. The interface is intuitive, and I had no trouble finding the perfect template for my project. It's an app that truly empowers users.`,
+        name: 'Cary Kennedy',
+        job: 'Film director',
+        image: {
+          src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Cary Kennedy Image',
+        },
+      },
+      {
+        testimonial: `The app's seamless download process and intuitive layout have made selecting templates an enjoyable experience. Being able to preview and experiment with different designs before committing has saved me time and ensured I get the perfect look for my website.`,
+        name: 'Josh Wilkinson',
+        job: 'Product Manager',
+        image: {
+          src: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Josh Wilkinson Image',
+        },
+      },
+      {
+        testimonial:
+          'I was able to download and use a professional website template within minutes. The step-by-step process and user-friendly interface made it easy for me to create a website that looks as if it was designed by a pro.',
+        name: 'Sidney Hansen',
+        job: 'Decorator',
+        image: {
+          src: 'https://images.unsplash.com/photo-1512361436605-a484bdb34b5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          alt: 'Sidney Hansen Image',
+        },
+      },
+    ]}
+    callToAction={{
+      target: '_blank',
+      text: 'Read more testimonials',
+      href: 'https://github.com/onwidget/astrowind',
+      icon: 'tabler:chevron-right',
+    }}
+  /> -->
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="자주 묻는 질문"
+    id="faq"
+    items={[
+      {
+        title: '이 앱은 어떤 일을 하나요?',
+        description:
+          '사진과 간단한 설명을 바탕으로 AI가 개인 맞춤 오픽 스크립트를 생성해줍니다.',
+      },
+      {
+        title: '어떻게 도움이 되나요?',
+        description:
+          '내 경험을 바로 활용한 답변을 제공해 준비 시간을 줄이고 답변의 자연스러움을 높입니다.',
+      },
+      {
+        title: '어떤 기기에서 사용할 수 있나요?',
+        description: `대부분의 스마트폰과 태블릿에서 사용할 수 있도록 최적화되어 있습니다.`,
+      },
+      {
+        title: '다른 앱과 뭐가 다르나요?',
+        description:
+          '사진 기반의 개인화 스크립트 생성으로 실제 경험을 반영한 답변을 만들 수 있습니다.',
+      },
+      {
+        title: '요금은 어떻게 되나요?',
+        description:
+          '기본 기능은 무료로 제공되며, 고급 기능은 별도 플랜으로 제공될 수 있습니다.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    id="download"
+    title="My OPIC Story로 지금 시작하세요"
+    subtitle="사진 한 장으로 맞춤 오픽 스크립트를 만들어 연습해보세요."
+  >
+    <div slot="actions" class="flex max-w-sm gap-4">
+      <Button variant="link" href={appStoreDownloadLink}>
+        <Image src={appStoreImg} alt="App Store Image" width={200} />
+      </Button>
+
+      <Button variant="link" href={googlePlayDownloadLink}>
+        <Image src={googlePlayImg} alt="Google Play Image" width={200} />
+      </Button>
+    </div>
+  </CallToAction>
+</Layout>

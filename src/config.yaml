@@ -1,0 +1,46 @@
+site:
+  name: My OPIC Story
+  site: 'https://my-opic-story.aboutsvc.com/'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+
+# Default SEO metadata
+metadata:
+  title:
+    default: My OPIC Story
+    template: '%s — My OPIC Story'
+  description: "사진과 간단한 설명만으로 AI가 개인화된 오픽 스크립트를 생성합니다. 내 경험을 담은 답변으로 연습 시간을 줄이고 자연스러운 말하기를 준비하세요."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: My OPIC Story
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: '@onwidget'
+    site: '@onwidget'
+    cardType: summary_large_image
+
+i18n:
+  language: ko
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+    postsPerPage: 6
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: "G-R8Z83F5LX2"
+      partytown: false
+
+ui:
+  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
